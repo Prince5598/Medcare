@@ -1,0 +1,110 @@
+<%- include("admin.ejs") %>
+
+  <section class="bg-white dark:bg-gray-900">
+    <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Update Doctor Details</h2>
+        <form action="/Updateform/<%=content._id%>?_method=PATCH" method="post" class="space-y-4" enctype="multipart/form-data">
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4 md:mb-0">
+              <label for="first_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">First
+                Name</label>
+              <input type="text" id="first_name" name="first_name"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2 w-full" value="<%=content.fname%>"
+                required>
+            </div>
+            <div class="w-full md:w-1/2 px-2">
+              <label for="last_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Last
+                Name</label>
+              <input type="text" id="last_name" name="last_name"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2 w-full" value="<%=content.lname%>"
+                required>
+            </div>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="specialization"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Specialization</label>
+            <input type="text" id="specialization" name="specialization"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" value="<%=content.Specialization%>" required >
+          </div>
+
+          <div class="flex flex-col">
+            <label for="contact" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contact
+              Number</label>
+            <input type="number" id="contact" name="contact"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" value="<%=content.contact%>" required>
+          </div>
+          <div class="flex flex-col">
+            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+            <input type="email" id="email" name="email"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" value="<%=content.email%>" required>
+          </div>
+          <div class="flex flex-col">
+            <label for="update_image" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Update Photo</label>
+            <input type="checkbox" id="update_image" name="update_image">
+            <label for="update_image" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Check this box to update the photo</label>
+          </div>
+  
+          <div class="flex flex-col hidden" id="image_upload_section">
+            <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Upload New Photo</label>
+            <input type="file" id="image" name="image" accept="image/*" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2">
+          </div>
+          <div class="flex flex-col"> 
+            <label for="instagram" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Instagram
+              URL</label>
+            <input type="url" id="instagram" name="instagram"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" value="<%=content.url.insta%>" required>
+          </div>
+          <div class="flex flex-col">
+            <label for="facebook" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Facebook
+              URL</label>
+            <input type="url" id="facebook" name="facebook"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" value="<%=content.url.facebook%>" required>
+          </div>
+          <div class="flex flex-col">
+            <label for="twitter" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Twitter
+              URL</label>
+            <input type="url" id="twitter" name="twitter"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" value="<%=content.url.twitter%>" required>
+          </div>
+          <div class="flex flex-col">
+            <label for="linkedin" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">LinkedIn
+              URL</label>
+            <input type="url" id="linkedin" name="linkedin"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" value="<%=content.url.linkedin%>" required>
+          </div>
+
+          <div class="flex flex-col">
+            <label for="gender" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gender</label>
+            <select id="gender" name="gender"
+              class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md p-2" required>
+              
+              <option value="male" <%=content.Gender === "male" ? 'selected' : ''%> >Male</option>
+              <option value="female" <%=content.Gender === "female" ? 'selected' : ''%>>Female</option>
+              <option value="other" <%=content.Gender === "other" ? 'selected' : ''%>>Other</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit"
+              class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <%- include("footer.ejs") %>
+
+  <script>
+    document.getElementById('update_image').addEventListener('change', function() {
+      const imageUploadSection = document.getElementById('image_upload_section');
+      if (this.checked) {
+        imageUploadSection.classList.remove('hidden');
+      } else {
+        imageUploadSection.classList.add('hidden');
+      }
+    });
+  </script>

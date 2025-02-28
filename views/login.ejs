@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <div class="wrapper">
+
+      <% if (messages.error) { %>
+        <p id="text" style="color: red;"><%= messages.error %></p>
+    <% } %>
+
+    <% if (messages.success) { %>
+        <p style="color: green;"><%= messages.success %></p>
+    <% } %>
+        <div class="title-text">
+          <div class="title login">Login Form</div>
+          <div class="title signup">Signup Form</div>
+        </div>
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <form action="/login/exist" method="post" class="login">
+              <div class="field">
+                <input type="text" placeholder="Email Address" name="ExistEmail" value="<%=ExistEmail || '' %>"  required>
+              </div>
+              <div class="field">
+                <input type="password"  placeholder="Password" name="Existpass" required>
+              </div>
+              
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+              </div>
+              <div class="signup-link">Not a member? <a href="">Signup now</a></div>
+            </form>
+            <form  onsubmit="return validateForm()" class="signup" action="/login/new" method="POST">
+              <div class="field">
+                <input type="text" id="email" placeholder="Email Address" name="email" value="<%= email || '' %>"
+                required>
+              </div>
+              <div class="field">
+                <input type="text" id="username" placeholder="Username" name="username"   required>
+              </div>
+              <div class="field">
+                <input type="password" id="password" placeholder="Password" name="password" value="<%= password || '' %>"  required>
+              </div>
+              <div class="field">
+                <input type="password" id="confirmpass" placeholder="Confirm password" name="confirmpass"  required>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit"  value="Signup">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <script src="/javaScript/login.js"></script>
+</body>
+</html>

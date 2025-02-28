@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        
+        :root {
+    --green: #663cae;
+    --black: #444;
+    --light-color: #777;
+    --box-shadow: 0.5rem 0.5rem 0 rgba(68, 22, 160, 0.2);
+    --text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+    --border: 0.2rem solid var(--green);
+}
+/* Global styles */
+* {
+   
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Change the background color if needed */
+}
+
+/* Table styles */
+.bookings {
+    padding: 2rem 5%;
+}
+
+.bookings .table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #663cae; /* Green border */
+    border-radius: 0.5rem;
+}
+
+.bookings table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.bookings th,
+.bookings td {
+    padding: 0.75rem;
+    border: 1px solid #663cae; /* Green border */
+}
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 5rem;
+    letter-spacing: 0.4rem;
+}
+
+.heading span{
+    text-transform: uppercase;
+    color: var(--green);
+}
+.bookings th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #6f44bb; /* Green color shade */
+    color: white; /* Text color */
+}
+
+.bookings tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.bookings tbody tr:hover {
+    background-color: #ddd;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <% if (content.appointments.length === 0) { %>
+        <h2>No Appointment book yet</h2>
+    <% } else { %>
+        <section class="bookings">
+            <h1 class="heading"><span>My</span> Appointment </h1>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Doctor</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (let i = 0; i < content.appointments.length; i++) { %>
+                            <tr>
+                                <td><%= content.appointments[i].name %></td>
+                                <td><%= content.appointments[i].Address %></td>
+                                <td><%= content.appointments[i].contact %></td>
+                                <td><%= content.appointments[i].Age %></td>
+                                <td><%= content.appointments[i].doctor %></td>
+                                <td><%= content.appointments[i].appointmentDate %></td>
+                                <td><%= content.appointments[i].appointmentTime %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    <% } %>
+
+    
+</body>
+
+</html>

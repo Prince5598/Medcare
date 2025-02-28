@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> medcare.</a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#services">services</a>
+            <a href="#about">about</a>
+            <a href="#doctors">doctors</a>
+            <a href="#book">book</a>
+            <a href="#review">review</a>
+            <a href="#blogs">blogs</a>
+            <a href="/logout" id="logoutIcon"><button>logout</button></a>
+            
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <section class="home" id="home">
+
+        <div class="image">
+            <img src="/images/medical-banner-with-stethoscope.jpg" alt="" height="550px" style="border-radius: 7px;">
+        </div>
+
+        <div class="content">
+            <h3>stay safe, stay healthy</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam voluptate molestiae sint.</p>
+            <a href="#" class="btn"> contact us <span class="fas fa-chevron-right"></span></a>
+        </div>
+
+    </section>
+
+    <section class="icons-container">
+
+        <div class="icons">
+            <i class="fas fa-user-md"></i>
+            <h3>140+</h3>
+            <p>doctors at work</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-users"></i>
+            <h3>1040+</h3>
+            <p>satisfied patients</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-procedures"></i>
+            <h3>500+</h3>
+            <p>bed facility</p>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-hospitals"></i>
+            <h3>80+</h3>
+            <p>available hospitals</p>
+        </div>
+
+    </section>
+
+    <section class="services" id="services">
+
+        <h1 class="heading"> our <span>services</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fas fa-notes-medical"></i>
+                <h3>free checkups</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam aliquam temporibus?</p>
+                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-ambulance"></i>
+                <h3>24/7 ambulance</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam aliquam temporibus?</p>
+                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-user-md"></i>
+                <h3>expert doctors</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam aliquam temporibus?</p>
+                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+            
+            <div class="box">
+                <i class="fas fa-pills"></i>
+                <h3>medicines</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam aliquam temporibus?</p>
+                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-procedures"></i>
+                <h3>bed facility</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam aliquam temporibus?</p>
+                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-heartbeat"></i>
+                <h3>total care</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nam aliquam temporibus?</p>
+                <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> <span>about</span> us</h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="/images/joyful-young-male-doctor-wearing-medical-robe-stethoscope-around-neck-looking-camera-showing-empty-hand-isolated-purple-background.jpg" alt="">
+
+            </div>
+
+            <div class="content">
+                <h3>we take care of your healthy life</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id sit molestias quasi repellendus
+                    velit! Autem dolorum nobis maxime itaque ad non?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, error.</p>
+                <a href="#" class="btn">
+                    learn more<span class="fas fa-chevron-right"></span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="doctors" id="doctors">
+
+        <h1 class="heading">our <span>doctors</span> </h1>
+        
+        <div class="box-container">
+
+            <% for(let i = 0; i < Math.min(4,result.length); i++) {%>
+                
+                <div class="box">
+                    <img src="/image/<%=result[i]._id%>" alt="Image">
+                    <h3><%=result[i].fname%> <%=result[i].lname%></h3>
+                    <span><%= result[i].Specialization %></span>
+                    <div class="share">
+                        <a href="<%=result[i].url.facebook%>" class="fab fa-facebook-f"></a>
+                        <a href="<%=result[i].url.twitter%>" class="fab fa-twitter"></a>
+                        <a href="<%=result[i].url.insta%>" class="fab fa-instagram"></a>
+                        <a href="<%=result[i].url.linkedin%>" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <a href="/Allimage" class="btn">
+                View more<span class="fas fa-chevron-right"></span>
+            </a>
+    </section> 
+
+    <section class="book" id="book">
+
+        <h1 class="heading"><span>book</span> now </h1>
+
+        <div class="row">
+
+            <div class="image" style="display: flex;flex-direction: column; justify-content: center; align-items: center;">
+                <img src="/images/purple-calendar-clock-icon-3d-reminder-notification-concept-website-ui-purple-background-3d-rendering-illustration.jpg" alt="" style="margin-bottom: 20px; height: 650px;">
+                <a href="/Appointmenthistory/<%=content._id%>" class="btn">
+                    My Appointment<span class="fas fa-chevron-right"></span>
+                </a>
+            </div>
+            
+
+            <form action="/Appointmentform/<%=content._id%>" method="post">
+                <h3>book appointment</h3>
+                <input type="text" placeholder="Patient  First-Name" class="box" name="fname" required>
+                <input type="text" placeholder="Patient  Last-Name" class="box" name="lname" required>
+                <textarea name="Address" id="" class="box" placeholder="Enter Address" required></textarea>
+                <input type="number" placeholder="Phone Number" class="box" name="contact" required>
+                <input type="number" placeholder="Age" class="box" name="age" required>
+                <select name="doctor" id="doctor" class="box" required>
+                    <option value="" selected disabled>select the doctors</option>
+                    <option value="Dr.Prince Patel" >Dr.Prince Patel</option>
+                    <option value="Dr.Dev Patel">Dr.Dev Patel</option>
+                    <option value="Dr.Radhi Patel">Dr.Radhi Patel</option>
+                    <option value="Dr.Shiv Dixit">Dr.Shiv Dixit</option>
+                </select>
+                <input type="email" placeholder="email" class="box" name="email" required>
+                <input type="date" placeholder="Date" class="box" name="date"required>
+                <input type="time" placeholder="Time"  class="box" name="time" required>
+                <input type="submit" value="book now" class="btn" >
+            </form>
+        </div>
+    </section>
+
+    <section class="review" id="review">
+
+        <h1 class="heading"> client's <span>review</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="/images/20231228_132210.jpg" alt="" >
+                <h3>Prince Patel</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+
+                <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam commodi nulla sequi sit
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic minima quasi doloremque?
+                    doloremque ipsa impedit et illo? Sint, reprehenderit porro.</p>
+            </div>
+
+            <div class="box">
+                <img src="/images/20231228_141143.jpg" alt="">
+                <h3>Khush Patel</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+
+                <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam commodi nulla sequi sit
+                    doloremque ipsa impedit et illo? Sint, reprehenderit porro.</p>
+            </div>
+
+            <div class="box">
+                <img src="/images/20231228_141715.jpg" alt="">
+                <h3>Dev Patel</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+
+                <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam commodi nulla sequi sit
+                    doloremque ipsa impedit et illo? Sint, reprehenderit porro.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="blogs" id="blogs">
+
+        <h1 class="heading">our <span>blogs</span></h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="/images/empty-hallway-background.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"><i class="fas  fa-calendar"></i>1st march, 2024</a>
+                        <a href="#"><i class="fas  fa-user"></i>by admin</a>
+                    </div>
+                    <h3>blog title goes here</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quidem maiores fuga.</p>
+                    <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="/images/logo_make_11_06_2023_306.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"><i class="fas  fa-calendar"></i>1st march, 2024</a>
+                        <a href="#"><i class="fas  fa-user"></i>by admin</a>
+                    </div>
+                    <h3>blog title goes here</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quidem maiores fuga.</p>
+                    <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="/images/logo_make_11_06_2023_412.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="icon">
+                        <a href="#"><i class="fas  fa-calendar"></i>1st march, 2024</a>
+                        <a href="#"><i class="fas  fa-user"></i>by admin</a>
+                    </div>
+                    <h3>blog title goes here</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quidem maiores fuga.</p>
+                    <a href="#" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#"> <i class="fas fa-chevron-right"></i>Home</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>Services</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>About</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>Doctors</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>book</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>Review</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>Blogs</a>
+
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#"> <i class="fas fa-chevron-right"></i>dental care</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>message therapy</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>cardioloty</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>diagnosis</a>
+                <a href="#"> <i class="fas fa-chevron-right"></i>ambulance service</a>
+                
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"><i class="fas fa-phone"></i>+91 8488039383</a>
+                <a href="#"> <i class="fas fa-phone"></i>+91 8320115800</a>
+                <a href="#"><i class="fas fa-envelope"></i>princepatel5598@gmail.com</a>
+                <a href="#"><i class="fas fa-envelope"></i>Radhipatel@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i>Gujarat, India - 363310</a>
+            </div>
+
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+                <a href="#"><i class="fab fa-pinterest"></i>pinterest</a>
+            </div>
+
+        </div>
+
+        <div class="credit">created by <span>Mr. Prince Patel</span> | all rights reserved</div>
+    </section>
+
+    <script src="/javaScript/home.js"></script>
+    <script>
+        $('#logoutIcon').click(function() {
+    // Send AJAX request to logout endpoint
+    $.ajax({
+        type: 'GET',
+        url: '/logout',
+        success: function(response) {
+            // Redirect to home page upon successful logout
+            window.location.href = '/profile';
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+});
+
+    </script>
+</body>
+
+</html>

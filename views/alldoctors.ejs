@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --green: #663cae;
+            --black: #444;
+            --light-color: #777;
+            --box-shadow: 0.5rem 0.5rem 0 rgba(68, 22, 160, 0.2);
+            --text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+            --border: 0.2rem solid var(--green);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all 0.2s ease-out;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+        }
+
+
+        section {
+            padding: 2rem 5%;
+        }
+
+        section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .heading {
+            text-align: center;
+            padding-bottom: 2rem;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            color: var(--black);
+            font-size: 5rem;
+            letter-spacing: 0.4rem;
+        }
+
+        .heading span {
+            text-transform: uppercase;
+            color: var(--green);
+        }
+
+       
+
+        .doctors .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 2rem;
+        }
+
+        .doctors .box-container .box {
+            text-align: center;
+            background: #fff;
+            border-radius: 0.5rem;
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            height: 100%;
+            /* Ensure all boxes are of equal height */
+        }
+
+        .doctors .box-container .box img {
+            max-width: 100%;
+            /* Ensure the image doesn't exceed its container */
+            max-height: 200px;
+            /* Ensure the image doesn't exceed its container */
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            /* Maintain aspect ratio and fill the container */
+        }
+
+        .doctors .box-container .box h3 {
+            color: var(--black);
+            font-size: 2.5rem;
+        }
+
+        .doctors .box-container .box span {
+            color: var(--green);
+            font-size: 1.5rem;
+        }
+
+        .doctors .box-container .box .share {
+            padding-top: 2rem;
+        }
+
+
+        .doctors .box-container .box .share a {
+            height: 5rem;
+            width: 5rem;
+            line-height: 4.5rem;
+            font-size: 2rem;
+            color: var(--green);
+            border-radius: 0.5rem;
+            border: var(--border);
+            margin: 0.3rem;
+        }
+
+        .doctors .box-container .box .share a:hover {
+            color: #fff;
+            background-color: var(--green);
+            box-shadow: var(--box-shadow);
+        }
+
+        @media (max-width:991px) {
+
+            html {
+                font-size: 55%;
+            }
+
+            .header {
+                padding: 2rem;
+            }
+
+            section {
+                padding: 2rem;
+            }
+
+        }
+
+        
+
+        @media (max-width:450px) {
+            html {
+                font-size: 50%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <section class="doctors" id="doctors">
+
+        <h1 class="heading">our <span>doctors</span> </h1>
+
+        
+        <div class="box-container">
+
+            <% for(let i=0; i < result.length; i++) {%>
+
+                <div class="box">
+                    <img src="/image/<%=result[i]._id%>" alt="Image">
+                    <h3>
+                        <%=result[i].fname%>
+                            <%=result[i].lname%>
+                    </h3>
+                    <span>
+                        <%= result[i].Specialization %>
+                    </span>
+                    <div class="share">
+                        <a href="<%=result[i].url.facebook%>" class="fab fa-facebook-f"></a>
+                        <a href="<%=result[i].url.twitter%>" class="fab fa-twitter"></a>
+                        <a href="<%=result[i].url.insta%>" class="fab fa-instagram"></a>
+                        <a href="<%=result[i].url.linkedin%>" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        :root {
+            --green: #16a085;
+            --black: #444;
+            --light-color: #777;
+            --box-shadow: 0.5rem 0.5rem 0 rgba(22, 160, 133, 0.2);
+            --text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+            --border: 0.2rem solid var(--green);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all 0.2s ease-out;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 7rem;
+        }
+
+        section {
+            padding: 2rem 5%;
+        }
+        .heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 5rem;
+    letter-spacing: 0.4rem;
+}
+
+.heading span{
+    text-transform: uppercase;
+    color: var(--green);
+}
+        .book .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .book .row .image {
+            flex: 1 1 45rem;
+        }
+
+        .book .row .image img {
+            width: 100%;
+        }
+
+        .book .row form {
+            flex: 1 1 45rem;
+            background: #fff;
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .book .row form h3 {
+            color: var(--black);
+            padding-bottom: 1rem;
+            font-size: 3rem;
+        }
+
+        .book .row form .box {
+            width: 100%;
+            margin: 0.7rem 0;
+            border-radius: 0.5rem;
+            border: var(--border);
+            font-size: 1.6rem;
+            color: var(--black);
+            text-transform: none;
+            padding: 1rem;
+        }
+
+        .book .row form .btn {
+            padding: 1rem 3rem;
+        }
+        .btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    color: var(--green);
+    cursor: pointer;
+    font-size: 1.7rem;
+    background: #fff;
+}
+
+
+
+.btn:hover{
+    background: var(--green);
+    color: #fff;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <section class="book" id="book">
+
+        <h1 class="heading"><span>book</span> now </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="" alt="">
+            </div>
+
+            
+            <form action="">
+                <h3>book appointment</h3>
+                <input type="text" placeholder="Patient  First-Name" class="box">
+                <input type="text" placeholder="Patient  Last-Name" class="box">
+                <textarea name="" id="" class="box" placeholder="Enter Address"></textarea>
+                <input type="number" placeholder="Phone Number" class="box">
+                <input type="number" placeholder="Age" class="box">
+                <select name="doctor" id="doctor" class="box" >
+                    <option value="" selected disabled>select the doctors</option>
+                    <option value="Dr.Prince Patel" >Dr.Prince Patel</option>
+                    <option value="Dr.Dev Patel">Dr.Dev Patel</option>
+                    <option value="Dr.Radhi Patel">Dr.Radhi Patel</option>
+                    <option value="Dr.Shiv Dixit">Dr.Shiv Dixit</option>
+                </select>
+                <input type="email" placeholder="email" class="box">
+                <input type="date" class="box">
+                <input type="submit" value="book now" class="btn">
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
