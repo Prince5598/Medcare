@@ -61,6 +61,28 @@ if (emailfind.password == req.body.Existpass) {
 
 ### 1️⃣ Clone the Repository  
 ```sh
-git clone https://github.com/Medcare.git
+git clone https://github.com/Prince5598/Medcare.git
 cd Medcare
 ```
+### 2️⃣ Install Dependencies
+```sh
+npm install
+```
+### 3️⃣ Set Up Environment Variables
+Add you mongodb usrl in the below code in index.js.
+```javascript
+mongoose.connect('mongodb_url');
+```
+### 4️⃣ Start the Server
+```sh
+nodemon index.js
+```
+
+## 🚀 How to Use the Website  
+
+Follow these simple steps to access and use the **Medcare**:
+
+1️⃣ **Open your browser**.  
+2️⃣ **Navigate to the login page** by typing the following in the address bar: http://localhost:3000/login
+
+Enjoy seamless hospital management with an intuitive interface! 🎉
